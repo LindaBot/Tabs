@@ -26,6 +26,8 @@ namespace Tabs.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::PCLCrypto.Resource.String.ApplicationName = global::Tabs.Droid.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::Tabs.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Tabs.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -2936,6 +2938,12 @@ namespace Tabs.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f090027
+			public const int ApplicationName = 2131296295;
+			
+			// aapt resource value: 0x7f090026
+			public const int Hello = 2131296294;
 			
 			// aapt resource value: 0x7f09000f
 			public const int abc_action_bar_home_description = 2131296271;
