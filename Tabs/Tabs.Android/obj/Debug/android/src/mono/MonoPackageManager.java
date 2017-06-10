@@ -100,6 +100,11 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "Tabs.Android.dll" comes first in this list. */
 		"Tabs.Android.dll",
 		"FormsViewGroup.dll",
+		"Plugin.CurrentActivity.dll",
+		"Plugin.Media.Abstractions.dll",
+		"Plugin.Media.dll",
+		"Plugin.Permissions.Abstractions.dll",
+		"Plugin.Permissions.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Design.dll",
 		"Xamarin.Android.Support.v4.dll",

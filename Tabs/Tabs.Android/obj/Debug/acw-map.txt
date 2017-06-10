@@ -2,6 +2,14 @@ Tabs.Droid.MainActivity, Tabs.Android;md52a76a9f9044da7520be54b40fdc0dd50.MainAc
 Tabs.Droid.MainActivity, Tabs.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52a76a9f9044da7520be54b40fdc0dd50.MainActivity
 Tabs.Droid.MainActivity;md52a76a9f9044da7520be54b40fdc0dd50.MainActivity
 tabs.droid.MainActivity;md52a76a9f9044da7520be54b40fdc0dd50.MainActivity
+Tabs.Droid.MainApplication, Tabs.Android;md52a76a9f9044da7520be54b40fdc0dd50.MainApplication
+Tabs.Droid.MainApplication, Tabs.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52a76a9f9044da7520be54b40fdc0dd50.MainApplication
+Tabs.Droid.MainApplication;md52a76a9f9044da7520be54b40fdc0dd50.MainApplication
+tabs.droid.MainApplication;md52a76a9f9044da7520be54b40fdc0dd50.MainApplication
+Plugin.Media.MediaPickerActivity, Plugin.Media;md5a3e164e78ade0c22cefea770ddd0bc49.MediaPickerActivity
+Plugin.Media.MediaPickerActivity, Plugin.Media, Version=2.6.2.0, Culture=neutral, PublicKeyToken=null;md5a3e164e78ade0c22cefea770ddd0bc49.MediaPickerActivity
+Plugin.Media.MediaPickerActivity;md5a3e164e78ade0c22cefea770ddd0bc49.MediaPickerActivity
+plugin.media.MediaPickerActivity;md5a3e164e78ade0c22cefea770ddd0bc49.MediaPickerActivity
 Android.Support.Design.Widget.Snackbar/SnackbarActionClickImplementor, Xamarin.Android.Support.Design;android.support.design.widget.Snackbar_SnackbarActionClickImplementor
 Android.Support.Design.Widget.Snackbar+SnackbarActionClickImplementor, Xamarin.Android.Support.Design, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;android.support.design.widget.Snackbar_SnackbarActionClickImplementor
 Android.Support.Design.Widget.Snackbar.SnackbarActionClickImplementor;android.support.design.widget.Snackbar_SnackbarActionClickImplementor
