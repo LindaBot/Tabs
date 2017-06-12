@@ -58,9 +58,9 @@ namespace Tabs
         {
             var client = new HttpClient();
 
-            client.DefaultRequestHeaders.Add("Prediction-Key", "a51ac8a57d4e4345ab0a48947a4a90ac");
+            client.DefaultRequestHeaders.Add("Prediction-Key", "26e87165db3d41c58764deb3859c045f");
 
-            string url = "https://southcentralus.api.cognitive.microsoft.com/customvision/v1.0/Prediction/4da1555c-14ca-4aaf-af01-d6e1e97e5fa6/image?iterationId=7bc76035-3825-4643-917e-98f9d9f79b71";
+            string url = "https://southcentralus.api.cognitive.microsoft.com/customvision/v1.0/Prediction/d163e053-5416-425f-86b6-c104f780d27f/image?iterationId=5048e35b-553d-4510-a7f8-e6116b9c0384";
 
             HttpResponseMessage response;
 
@@ -87,15 +87,17 @@ namespace Tabs
                     //Truncate values to labels in XAML
                     foreach (var item in Tag)
                     {
-                       // TagLabel.Text += item + ": \n";
+                        TagLabel.Text += item + ": \n";
                     }
 
                     foreach (var item in Probability)
                     {
-                       // PredictionLabel.Text += item + "\n";
+                        PredictionLabel.Text += item + "\n";
                     }
 
                 }
+
+
 
                 //Get rid of file once we have finished using it
                 file.Dispose();
