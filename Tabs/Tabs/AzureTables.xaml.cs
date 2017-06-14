@@ -11,8 +11,9 @@ namespace Tabs
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AzureTables : ContentPage
-	{
-		public AzureTables ()
+    {
+        MobileServiceClient client = AzureManager.AzureManagerInstance.AzureClient;
+        public AzureTables ()
 		{
 			InitializeComponent ();
 		}
