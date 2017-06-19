@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Newtonsoft.Json.Linq;
 using System.Linq;
+using System.Text;
 
 namespace Tabs
 {
@@ -38,10 +39,13 @@ namespace Tabs
             if (file == null)
                 return;
 
+            
+            // This shows the image on the screen 
             image.Source = ImageSource.FromStream(() =>
             {
                 return file.GetStream();
             });
+            
 
 
             await MakePredictionRequest(file);
@@ -54,14 +58,85 @@ namespace Tabs
             return binaryReader.ReadBytes((int)stream.Length);
         }
 
+        /// <summary>
+        /// Formats the given JSON string by adding line breaks and indents.
+        /// </summary>
+        /// <param name="json">The raw JSON string to format.</param>
+        /// <returns>The formatted JSON string.</returns>
+        static string JsonPrettyPrint(string json)
+        {
+            if (string.IsNullOrEmpty(json))
+                return string.Empty;
+
+            json = json.Replace(Environment.NewLine, "").Replace("\t", "");
+
+            StringBuilder sb = new StringBuilder();
+            bool quote = false;
+            bool ignore = false;
+            int offset = 0;
+            int indentLength = 3;
+
+            foreach (char ch in json)
+            {
+                switch (ch)
+                {
+                    case '"':
+                        if (!ignore) quote = !quote;
+                        break;
+                    case '\'':
+                        if (quote) ignore = !ignore;
+                        break;
+                }
+
+                if (quote)
+                    sb.Append(ch);
+                else
+                {
+                    switch (ch)
+                    {
+                        case '{':
+                        case '[':
+                            sb.Append(ch);
+                            sb.Append(Environment.NewLine);
+                            sb.Append(new string(' ', ++offset * indentLength));
+                            break;
+                        case '}':
+                        case ']':
+                            sb.Append(Environment.NewLine);
+                            sb.Append(new string(' ', --offset * indentLength));
+                            sb.Append(ch);
+                            break;
+                        case ',':
+                            sb.Append(ch);
+                            sb.Append(Environment.NewLine);
+                            sb.Append(new string(' ', offset * indentLength));
+                            break;
+                        case ':':
+                            sb.Append(ch);
+                            sb.Append(' ');
+                            break;
+                        default:
+                            if (ch != ' ') sb.Append(ch);
+                            break;
+                    }
+                }
+            }
+
+            return sb.ToString().Trim();
+        }
+
         async Task MakePredictionRequest(MediaFile file)
         {
             // An unhandled exception occured. occurred
             var client = new HttpClient();
 
-            client.DefaultRequestHeaders.Add("Prediction-Key", "26e87165db3d41c58764deb3859c045f");
+            client.DefaultRequestHeaders.Add("ocp-apim-subscription-key", "cb6ad66ed309478290841e2c1884604f");
 
-            string url = "https://southcentralus.api.cognitive.microsoft.com/customvision/v1.0/Prediction/d163e053-5416-425f-86b6-c104f780d27f/image?iterationId=5048e35b-553d-4510-a7f8-e6116b9c0384";
+            string requestParameters = "language=unk&detectOrientation=true";
+
+            string url = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/ocr";
+
+            string uri = url + "?" + requestParameters;
 
             HttpResponseMessage response;
             
@@ -74,30 +149,23 @@ namespace Tabs
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
                 try
                 {
-                    response = await client.PostAsync(url, content);
+                    response = await client.PostAsync(uri, content);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseString = await response.Content.ReadAsStringAsync();
 
+                            responseString = JsonPrettyPrint(responseString);
+
                             JObject rss = JObject.Parse(responseString);
+
+                            TagLabel.Text = responseString;
 
                             //Querying with LINQ
                             //Get all Prediction Values
-                            var Probability = from p in rss["Predictions"] select (string)p["Probability"];
-                            var Tag = from p in rss["Predictions"] select (string)p["Tag"];
 
-                            //Truncate values to labels in XAML
-                            foreach (var item in Tag)
-                            {
-                                TagLabel.Text += item + ": \n";
-                            }
 
-                            foreach (var item in Probability)
-                            {
-                                PredictionLabel.Text += item + "\n";
-                            }
 
-                        }
+                    }
                 }
                 catch (Exception)
                 {
