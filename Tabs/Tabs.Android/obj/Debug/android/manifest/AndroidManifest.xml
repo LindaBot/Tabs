@@ -5,8 +5,8 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-  <uses-feature android:name="android.hardware.camera.autofocus" android:required="true" />
   <uses-feature android:name="android.hardware.camera" android:required="true" />
+  <uses-feature android:name="android.hardware.camera.autofocus" android:required="true" />
   <application android:label="Tabs.Android" android:name="md52a76a9f9044da7520be54b40fdc0dd50.MainApplication" android:allowBackup="true" android:icon="@drawable/icon" android:debuggable="true">
     <provider android:name="android.support.v4.content.FileProvider" android:authorities="com.yourcompany.Tabs.fileprovider" android:exported="false" android:grantUriPermissions="true">
       <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>

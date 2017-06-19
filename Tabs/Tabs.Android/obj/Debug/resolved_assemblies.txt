@@ -79,3 +79,4 @@ C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\
 C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\android\assets\System.ComponentModel.dll
 C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\android\assets\System.Collections.Concurrent.dll
 C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\android\assets\Mono.CSharp.dll
+C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\android\assets\Mono.Security.dll
