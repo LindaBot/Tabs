@@ -145,7 +145,8 @@ namespace Tabs
                     }
 
 
-                    foreach (var sentense in message) {
+                    foreach (var sentense in message) {cmd
+
                         TagLabel.Text += sentense + "\n";
                     }
                         
