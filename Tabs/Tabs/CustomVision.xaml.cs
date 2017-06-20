@@ -105,73 +105,66 @@ namespace Tabs
 
             client.DefaultRequestHeaders.Add("ocp-apim-subscription-key", "cb6ad66ed309478290841e2c1884604f");
 
-            string requestParameters = "language=en&detectOrientation=true";
+            string requestParameters = "handwriting=true";
 
-            string url = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/ocr";
+            string url = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/recognizeText";
 
             string uri = url + "?" + requestParameters;
 
-            HttpResponseMessage response;
             
+
+            HttpResponseMessage response = null;
+
+            string operationLocation = null;
+
             byte[] byteData = GetImageAsByteArray(file);
 
-            using (var content = new ByteArrayContent(byteData))
+            var content = new ByteArrayContent(byteData);
+            
+            TagLabel.Text = "";
+            PredictionLabel.Text = "";
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+   
+            response = await client.PostAsync(uri, content);
+            
+            if (response.IsSuccessStatusCode)
             {
-                TagLabel.Text = "";
-                PredictionLabel.Text = "";
-                content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+                
+                operationLocation = response.Headers.GetValues("Operation-Location").FirstOrDefault();
+                response = await client.GetAsync(operationLocation);
+                responseString = await response.Content.ReadAsStringAsync();
+
+                JObject rss = JObject.Parse(responseString);
+
+                List<String> message = new List<String>();
                 try
-                {
-                    response = await client.PostAsync(uri, content);
-                    if (response.IsSuccessStatusCode)
+                { 
+                    foreach (var section in rss["recognitionResult"]["lines"])
                     {
-                        responseString = await response.Content.ReadAsStringAsync();
+                        message.Add(section["text"].ToString());
+                        //etc
+                    }
 
 
-                        JObject rss = JObject.Parse(responseString);
-
-                        List<String> message = new List<String>();
-                        foreach (var section in rss["regions"])
-                        {
-                            foreach (var element in section["lines"])
-                            { 
-                                string line = "";
-                                foreach (var word in element["words"])
-                                {
-                                    line += word["text"].ToString() + " ";
-
-                                    /*
-                                    foreach (var text in word["text"])
-                                    {
-                                        line += text;
-                                    }
-                                    */
-                                }
-
-                                message.Add(line);
-                                //etc
-                            }
-                        }
-
-
-                        foreach (var sentense in message) {
-                            TagLabel.Text += sentense + "\n";
-                        }
+                    foreach (var sentense in message) {
+                        TagLabel.Text += sentense + "\n";
+                    }
                         
 
 
 
-                        if (responseString == ""){
-                                TagLabel.Text = "Error";
-                            }
+                    if (message.Count==0){
+                            TagLabel.Text = "Nothing found";
                         }
-                    
                 }
-                catch (Exception error)
+                catch (Exception e)
                 {
-                    TagLabel.Text = error.ToString();
+                    TagLabel.Text = e.ToString();
                 }
             }
+
+
+
             //Get rid of file once we have finished using it
             file.Dispose();
         }
