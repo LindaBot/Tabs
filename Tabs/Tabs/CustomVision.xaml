@@ -4,14 +4,17 @@
         <StackLayout Margin="20" Orientation="Vertical">
             <Button Text="Take Photo and Analyze" Clicked="loadCamera" />
             <Button Text="Select image from gallery" Clicked="loadImage"/>
-        
+            <Button Text="Debug" Clicked="getInfo"/>
+
+            <Image x:Name="image" Aspect="AspectFit"/>
+            
             <StackLayout Orientation="Horizontal">
                 <Label x:Name="TagLabel">
                 </Label>
                 <Label x:Name="PredictionLabel">
                 </Label>
             </StackLayout>
-            <Image x:Name="image" Aspect="AspectFit"/>
+            
         
     </StackLayout>
     </ScrollView>

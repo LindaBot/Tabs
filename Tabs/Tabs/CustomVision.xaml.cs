@@ -9,11 +9,14 @@ using Xamarin.Forms;
 using Newtonsoft.Json.Linq;
 using System.Linq;
 using System.Text;
+using System.Collections.Generic;
 
 namespace Tabs
 {
     public partial class CustomVision : ContentPage
     {
+        string responseString = "";
+
         public CustomVision()
         {
             InitializeComponent();
@@ -86,14 +89,23 @@ namespace Tabs
             return attrib1Value;
         }
 
-        async Task MakePredictionRequest(MediaFile file)
+
+
+        private void getInfo(object sender, EventArgs e)
+        {
+            TagLabel.Text = responseString;
+            return;
+        }
+
+        public async Task MakePredictionRequest(MediaFile file)
         {
             // An unhandled exception occured. occurred
             var client = new HttpClient();
 
+
             client.DefaultRequestHeaders.Add("ocp-apim-subscription-key", "cb6ad66ed309478290841e2c1884604f");
 
-            string requestParameters = "language=unk&detectOrientation=true";
+            string requestParameters = "language=en&detectOrientation=true";
 
             string url = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/ocr";
 
@@ -111,34 +123,41 @@ namespace Tabs
                 try
                 {
                     response = await client.PostAsync(uri, content);
-                        if (response.IsSuccessStatusCode)
-                        {
-                            var responseString = await response.Content.ReadAsStringAsync();
-                        
+                    if (response.IsSuccessStatusCode)
+                    {
+                        responseString = await response.Content.ReadAsStringAsync();
 
-                            JObject rss = JObject.Parse(responseString);
 
-                        string message = "";
-                        foreach (var element in rss["regions"][0]["lines"])
+                        JObject rss = JObject.Parse(responseString);
+
+                        List<String> message = new List<String>();
+                        foreach (var section in rss["regions"])
                         {
-                            
-                            string line = "";
-                            foreach (var word in element["words"])
-                            {
-                                line += word["text"].ToString() + " ";
-                                
-                                /*
-                                foreach (var text in word["text"])
+                            foreach (var element in section["lines"])
+                            { 
+                                string line = "";
+                                foreach (var word in element["words"])
                                 {
-                                    line += text;
-                                }
-                                */
-                            }
+                                    line += word["text"].ToString() + " ";
 
-                             message += line + "end of sentense   " ;
-                            //etc
+                                    /*
+                                    foreach (var text in word["text"])
+                                    {
+                                        line += text;
+                                    }
+                                    */
+                                }
+
+                                message.Add(line);
+                                //etc
+                            }
                         }
-                        TagLabel.Text = message;
+
+
+                        foreach (var sentense in message) {
+                            TagLabel.Text += sentense + "\n";
+                        }
+                        
 
 
 
@@ -156,5 +175,6 @@ namespace Tabs
             //Get rid of file once we have finished using it
             file.Dispose();
         }
+
     }
 }
