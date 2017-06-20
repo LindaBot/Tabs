@@ -2,15 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Tabs.CustomVision" Title="Image Classifier">
     <ScrollView Padding="0, 20, 0, 20">
         <StackLayout Margin="20" Orientation="Vertical">
-            <Button Text="Take Photo and Analyze" Clicked="loadCamera" />
-            <Button Text="Select image from gallery" Clicked="loadImage"/>
-            <Button Text="Debug" Clicked="getInfo"/>
+            <Button Text="Take Photo and Analyze" Clicked="LoadCamera" />
+            <Button Text="Select image from gallery" Clicked="LoadImage"/>
+            <Button Text="Debug" Clicked="GetInfo"/>
+
 
             <Image x:Name="image" Aspect="AspectFit"/>
             
             <StackLayout Orientation="Horizontal">
                 <Label x:Name="TagLabel">
                 </Label>
+                
                 <Label x:Name="PredictionLabel">
                 </Label>
             </StackLayout>

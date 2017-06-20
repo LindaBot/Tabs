@@ -143,3 +143,4 @@ C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\
 C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\XbdMerge\Xamarin.Android.Support.v7.AppCompat.dll.stamp
 C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\XbdMerge\Xamarin.Android.Support.Design.dll.stamp
 C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\XbdMerge\Xamarin.Android.Support.v7.MediaRouter.dll.stamp
+C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\Tabs.Droid.EasyTable.xaml.g.cs

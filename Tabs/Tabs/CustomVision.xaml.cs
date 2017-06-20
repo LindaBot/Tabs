@@ -22,7 +22,7 @@ namespace Tabs
             InitializeComponent();
         }
 
-        private async void loadCamera(object sender, EventArgs e)
+        private async void LoadCamera(object sender, EventArgs e)
         {
             /* Loads Image from camera */
             await CrossMedia.Current.Initialize();
@@ -54,7 +54,7 @@ namespace Tabs
             await MakePredictionRequest(file);
         }
 
-        private async void loadImage(object sender, EventArgs e)
+        private async void LoadImage(object sender, EventArgs e)
         /* Loads Image from gallery */
         {
             await CrossMedia.Current.Initialize();
@@ -91,7 +91,7 @@ namespace Tabs
 
 
 
-        private void getInfo(object sender, EventArgs e)
+        private void GetInfo(object sender, EventArgs e)
         {
             TagLabel.Text = responseString;
             return;
@@ -135,9 +135,8 @@ namespace Tabs
                 responseString = await response.Content.ReadAsStringAsync();
 
                 JObject rss = JObject.Parse(responseString);
-
+                try { 
                 List<String> message = new List<String>();
-                try
                 { 
                     foreach (var section in rss["recognitionResult"]["lines"])
                     {
@@ -157,17 +156,17 @@ namespace Tabs
                             TagLabel.Text = "Nothing found";
                         }
                 }
+                }
                 catch (Exception e)
                 {
                     TagLabel.Text = e.ToString();
                 }
             }
 
-
-
             //Get rid of file once we have finished using it
             file.Dispose();
         }
+
 
     }
 }
