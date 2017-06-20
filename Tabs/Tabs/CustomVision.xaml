@@ -3,7 +3,7 @@
     <ScrollView Padding="0, 20, 0, 20">
         <StackLayout Margin="20" Orientation="Vertical">
             <Button Text="Take Photo and Analyze" Clicked="loadCamera" />
-            <Button Text="Select image from gallery"/>
+            <Button Text="Select image from gallery" Clicked="loadImage"/>
         
             <StackLayout Orientation="Horizontal">
                 <Label x:Name="TagLabel">

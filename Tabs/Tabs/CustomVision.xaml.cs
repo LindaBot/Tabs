@@ -21,6 +21,7 @@ namespace Tabs
 
         private async void loadCamera(object sender, EventArgs e)
         {
+            /* Loads Image from camera */
             await CrossMedia.Current.Initialize();
 
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
@@ -39,17 +40,39 @@ namespace Tabs
             if (file == null)
                 return;
 
-            
             // This shows the image on the screen 
             image.Source = ImageSource.FromStream(() =>
             {
                 return file.GetStream();
             });
-            
+
 
 
             await MakePredictionRequest(file);
         }
+
+        private async void loadImage(object sender, EventArgs e)
+        /* Loads Image from gallery */
+        {
+            await CrossMedia.Current.Initialize();
+
+
+            MediaFile file = await CrossMedia.Current.PickPhotoAsync();
+
+            if (file == null)
+                return;
+
+            // This shows the image on the screen 
+            image.Source = ImageSource.FromStream(() =>
+            {
+                return file.GetStream();
+            });
+
+
+            await MakePredictionRequest(file);
+        }
+
+
 
         static byte[] GetImageAsByteArray(MediaFile file)
         {
@@ -58,71 +81,9 @@ namespace Tabs
             return binaryReader.ReadBytes((int)stream.Length);
         }
 
-        /// <summary>
-        /// Formats the given JSON string by adding line breaks and indents.
-        /// </summary>
-        /// <param name="json">The raw JSON string to format.</param>
-        /// <returns>The formatted JSON string.</returns>
-        static string JsonPrettyPrint(string json)
-        {
-            if (string.IsNullOrEmpty(json))
-                return string.Empty;
-
-            json = json.Replace(Environment.NewLine, "").Replace("\t", "");
-
-            StringBuilder sb = new StringBuilder();
-            bool quote = false;
-            bool ignore = false;
-            int offset = 0;
-            int indentLength = 3;
-
-            foreach (char ch in json)
-            {
-                switch (ch)
-                {
-                    case '"':
-                        if (!ignore) quote = !quote;
-                        break;
-                    case '\'':
-                        if (quote) ignore = !ignore;
-                        break;
-                }
-
-                if (quote)
-                    sb.Append(ch);
-                else
-                {
-                    switch (ch)
-                    {
-                        case '{':
-                        case '[':
-                            sb.Append(ch);
-                            sb.Append(Environment.NewLine);
-                            sb.Append(new string(' ', ++offset * indentLength));
-                            break;
-                        case '}':
-                        case ']':
-                            sb.Append(Environment.NewLine);
-                            sb.Append(new string(' ', --offset * indentLength));
-                            sb.Append(ch);
-                            break;
-                        case ',':
-                            sb.Append(ch);
-                            sb.Append(Environment.NewLine);
-                            sb.Append(new string(' ', offset * indentLength));
-                            break;
-                        case ':':
-                            sb.Append(ch);
-                            sb.Append(' ');
-                            break;
-                        default:
-                            if (ch != ' ') sb.Append(ch);
-                            break;
-                    }
-                }
-            }
-
-            return sb.ToString().Trim();
+        static string[] GetValueFromJSON(JObject json) {
+            string[] attrib1Value = json.SelectToken(@"regions.lines.words.text").Value<string[]>();
+            return attrib1Value;
         }
 
         async Task MakePredictionRequest(MediaFile file)
@@ -153,33 +114,47 @@ namespace Tabs
                         if (response.IsSuccessStatusCode)
                         {
                             var responseString = await response.Content.ReadAsStringAsync();
-
-                            responseString = JsonPrettyPrint(responseString);
+                        
 
                             JObject rss = JObject.Parse(responseString);
 
-                            TagLabel.Text = responseString;
+                        string message = "";
+                        foreach (var element in rss["regions"][0]["lines"])
+                        {
+                            
+                            string line = "";
+                            foreach (var word in element["words"])
+                            {
+                                line += word["text"].ToString() + " ";
+                                
+                                /*
+                                foreach (var text in word["text"])
+                                {
+                                    line += text;
+                                }
+                                */
+                            }
 
-                            //Querying with LINQ
-                            //Get all Prediction Values
+                             message += line + "end of sentense   " ;
+                            //etc
+                        }
+                        TagLabel.Text = message;
 
 
 
-                    }
+                        if (responseString == ""){
+                                TagLabel.Text = "Error";
+                            }
+                        }
+                    
                 }
-                catch (Exception)
+                catch (Exception error)
                 {
-                    TagLabel.Text = "Cannot connect to the internet, please check your internet or try later";
+                    TagLabel.Text = error.ToString();
                 }
-
-
-                
-
-
-
-                //Get rid of file once we have finished using it
-                file.Dispose();
             }
+            //Get rid of file once we have finished using it
+            file.Dispose();
         }
     }
 }
