@@ -15,6 +15,7 @@ namespace Tabs
 {
     public partial class CustomVision : ContentPage
     {
+
         string responseString = "";
 
         public CustomVision()
@@ -75,6 +76,25 @@ namespace Tabs
             await MakePredictionRequest(file);
         }
 
+        /*
+        public void makeButton(List<String> message)
+        {
+            var layout = new StackLayout();
+
+            foreach (var sentense in message) { 
+                Button button = new Button
+                {
+                    Text = "My button"
+                };
+                layout.Children.Add(button);
+            }
+
+            this.Content = layout;
+
+
+            return;
+        }
+        */
 
 
         static byte[] GetImageAsByteArray(MediaFile file)
@@ -84,7 +104,8 @@ namespace Tabs
             return binaryReader.ReadBytes((int)stream.Length);
         }
 
-        static string[] GetValueFromJSON(JObject json) {
+        static string[] GetValueFromJSON(JObject json)
+        {
             string[] attrib1Value = json.SelectToken(@"regions.lines.words.text").Value<string[]>();
             return attrib1Value;
         }
@@ -111,8 +132,6 @@ namespace Tabs
 
             string uri = url + "?" + requestParameters;
 
-            
-
             HttpResponseMessage response = null;
 
             string operationLocation = null;
@@ -120,43 +139,43 @@ namespace Tabs
             byte[] byteData = GetImageAsByteArray(file);
 
             var content = new ByteArrayContent(byteData);
-            
+
             TagLabel.Text = "";
             PredictionLabel.Text = "";
             content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-   
+
             response = await client.PostAsync(uri, content);
-            
+            await Task.Delay(5000);
             if (response.IsSuccessStatusCode)
             {
-                
+
                 operationLocation = response.Headers.GetValues("Operation-Location").FirstOrDefault();
                 response = await client.GetAsync(operationLocation);
                 responseString = await response.Content.ReadAsStringAsync();
+                
+
 
                 JObject rss = JObject.Parse(responseString);
-                try { 
+
                 List<String> message = new List<String>();
-                { 
+                try
+                {
                     foreach (var section in rss["recognitionResult"]["lines"])
                     {
                         message.Add(section["text"].ToString());
-                        //etc
                     }
-
-
-                    foreach (var sentense in message) {cmd
-
+                    
+                    foreach (var sentense in message)
+                    {
                         TagLabel.Text += sentense + "\n";
                     }
-                        
 
+                    // makeButton(message);
 
-
-                    if (message.Count==0){
-                            TagLabel.Text = "Nothing found";
-                        }
-                }
+                    if (message.Count == 0)
+                    {
+                        TagLabel.Text = "Nothing found";
+                    }
                 }
                 catch (Exception e)
                 {
@@ -168,6 +187,7 @@ namespace Tabs
             file.Dispose();
         }
 
+        
 
     }
 }

@@ -16,6 +16,11 @@
                 <Label x:Name="PredictionLabel">
                 </Label>
             </StackLayout>
+
+            <StackLayout Orientation="Vertical" x:Name="buttons">
+                
+                
+            </StackLayout>
             
         
     </StackLayout>
