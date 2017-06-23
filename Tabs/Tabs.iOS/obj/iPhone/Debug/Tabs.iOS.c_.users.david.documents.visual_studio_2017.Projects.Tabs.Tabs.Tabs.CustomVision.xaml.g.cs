@@ -11,7 +11,7 @@
 namespace Tabs {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\David\\documents\\visual studio 2017\\Projects\\Tabs\\Tabs\\Tabs\\CustomVision." +
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\David\\Documents\\Visual Studio 2017\\Projects\\Tabs\\Tabs\\Tabs\\CustomVision." +
         "xaml")]
     public partial class CustomVision : global::Xamarin.Forms.ContentPage {
         

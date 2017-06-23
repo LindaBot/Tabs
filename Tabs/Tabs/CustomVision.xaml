@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Tabs.CustomVision" Title="Image Classifier">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Tabs.CustomVision" Title="Handwriting recognition">
     <ScrollView Padding="0, 20, 0, 20">
         <StackLayout Margin="20" Orientation="Vertical">
             <Button Text="Take Photo and Analyze" Clicked="LoadCamera" />

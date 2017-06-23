@@ -3,5 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>Nexus_5X_API_23</SelectedDevice>
     <DefaultDevice>Nexus_5X_API_23</DefaultDevice>
+    <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
 </Project>
