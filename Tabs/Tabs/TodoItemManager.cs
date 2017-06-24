@@ -4,6 +4,7 @@
  *  2) Uncomment the #define OFFLINE_SYNC_ENABLED
  *
  * For more information, see: http://go.microsoft.com/fwlink/?LinkId=620342
+ * Entire class is cloned from: https://github.com/Azure/azure-mobile-services-quickstarts/blob/master/client/xamarin.forms/ZUMOAPPNAME/TodoItemManager.cs
  */
 //#define OFFLINE_SYNC_ENABLED
 
@@ -15,14 +16,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
-using Tabs;
 
 #if OFFLINE_SYNC_ENABLED
 using Microsoft.WindowsAzure.MobileServices.SQLiteStore;
 using Microsoft.WindowsAzure.MobileServices.Sync;
 #endif
 
-namespace msaagain
+namespace Tabs
 {
     public partial class TodoItemManager
     {

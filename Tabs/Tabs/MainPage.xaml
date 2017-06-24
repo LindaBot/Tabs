@@ -6,7 +6,7 @@
     x:Class="Tabs.TabsPage">
     <NavigationPage Title="Information">
         <x:Arguments>
-            <local:AzureTables />
+            <local:TodoList />
         </x:Arguments>
     </NavigationPage>
     <local:CustomVision />

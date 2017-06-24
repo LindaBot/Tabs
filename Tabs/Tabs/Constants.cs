@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace msaagain
+namespace Tabs
 {
 	public static class Constants
 	{

@@ -69,7 +69,6 @@ C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\bin\
 C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\bin\Debug\Xamarin.Forms.Xaml.pdb
 C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\bin\Debug\Xamarin.Forms.Xaml.xml
 C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\bin\Debug\Xamarin.Forms.Xaml.dll.mdb
-C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\Tabs.Android.csprojResolveAssemblyReference.cache
 C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\XbdMerge\Xamarin.Android.Support.Annotations.dll.stamp
 C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\XbdMerge\Xamarin.Android.Support.Compat.dll.stamp
 C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\XbdMerge\Xamarin.Android.Support.CustomTabs.dll.stamp
@@ -91,7 +90,6 @@ C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\
 C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\Tabs.Droid.App.xaml.g.cs
 C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\Tabs.Droid.AzureTables.xaml.g.cs
 C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\Tabs.Droid.CustomVision.xaml.g.cs
-C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\Tabs.Droid.EasyTable.xaml.g.cs
 C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\Tabs.Android.dll
 C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\Tabs.Android.pdb
 C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\android\bin\Tabs.Android.apk
