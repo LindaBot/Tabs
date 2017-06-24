@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Tabs.AzureTables">
     <ContentPage.Content>
-        <Label Text="Azure Tables Navigation Page Tab" VerticalOptions="Center" HorizontalOptions="Center" />
+        <ScrollView Padding="0, 20, 0, 20">
+            <StackLayout Margin="20" Orientation="Vertical">
+                <Button Text="Take Photo and Analyze" Clicked="Get" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
