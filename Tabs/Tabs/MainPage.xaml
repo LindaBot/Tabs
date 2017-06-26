@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:Tabs" 
     x:Class="Tabs.TabsPage">
-    <NavigationPage Title="Information">
+    <NavigationPage Title="Easy Table">
         <x:Arguments>
             <local:TodoList />
         </x:Arguments>

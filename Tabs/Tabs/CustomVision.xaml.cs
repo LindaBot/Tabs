@@ -141,7 +141,6 @@ namespace Tabs
             var content = new ByteArrayContent(byteData);
 
             TagLabel.Text = "";
-            PredictionLabel.Text = "";
             content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
 
             response = await client.PostAsync(uri, content);
