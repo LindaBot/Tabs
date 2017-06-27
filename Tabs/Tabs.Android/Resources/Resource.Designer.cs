@@ -1180,44 +1180,44 @@ namespace Tabs.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0d004a
-			public const int abc_background_cache_hint_selector_material_dark = 2131558474;
+			// aapt resource value: 0x7f0d0051
+			public const int abc_background_cache_hint_selector_material_dark = 2131558481;
 			
-			// aapt resource value: 0x7f0d004b
-			public const int abc_background_cache_hint_selector_material_light = 2131558475;
+			// aapt resource value: 0x7f0d0052
+			public const int abc_background_cache_hint_selector_material_light = 2131558482;
 			
-			// aapt resource value: 0x7f0d004c
-			public const int abc_btn_colored_borderless_text_material = 2131558476;
+			// aapt resource value: 0x7f0d0053
+			public const int abc_btn_colored_borderless_text_material = 2131558483;
 			
-			// aapt resource value: 0x7f0d004d
-			public const int abc_btn_colored_text_material = 2131558477;
+			// aapt resource value: 0x7f0d0054
+			public const int abc_btn_colored_text_material = 2131558484;
 			
-			// aapt resource value: 0x7f0d004e
-			public const int abc_color_highlight_material = 2131558478;
+			// aapt resource value: 0x7f0d0055
+			public const int abc_color_highlight_material = 2131558485;
 			
-			// aapt resource value: 0x7f0d004f
-			public const int abc_hint_foreground_material_dark = 2131558479;
+			// aapt resource value: 0x7f0d0056
+			public const int abc_hint_foreground_material_dark = 2131558486;
 			
-			// aapt resource value: 0x7f0d0050
-			public const int abc_hint_foreground_material_light = 2131558480;
+			// aapt resource value: 0x7f0d0057
+			public const int abc_hint_foreground_material_light = 2131558487;
 			
 			// aapt resource value: 0x7f0d0005
 			public const int abc_input_method_navigation_guard = 2131558405;
 			
-			// aapt resource value: 0x7f0d0051
-			public const int abc_primary_text_disable_only_material_dark = 2131558481;
+			// aapt resource value: 0x7f0d0058
+			public const int abc_primary_text_disable_only_material_dark = 2131558488;
 			
-			// aapt resource value: 0x7f0d0052
-			public const int abc_primary_text_disable_only_material_light = 2131558482;
+			// aapt resource value: 0x7f0d0059
+			public const int abc_primary_text_disable_only_material_light = 2131558489;
 			
-			// aapt resource value: 0x7f0d0053
-			public const int abc_primary_text_material_dark = 2131558483;
+			// aapt resource value: 0x7f0d005a
+			public const int abc_primary_text_material_dark = 2131558490;
 			
-			// aapt resource value: 0x7f0d0054
-			public const int abc_primary_text_material_light = 2131558484;
+			// aapt resource value: 0x7f0d005b
+			public const int abc_primary_text_material_light = 2131558491;
 			
-			// aapt resource value: 0x7f0d0055
-			public const int abc_search_url_text = 2131558485;
+			// aapt resource value: 0x7f0d005c
+			public const int abc_search_url_text = 2131558492;
 			
 			// aapt resource value: 0x7f0d0006
 			public const int abc_search_url_text_normal = 2131558406;
@@ -1228,38 +1228,47 @@ namespace Tabs.Droid
 			// aapt resource value: 0x7f0d0008
 			public const int abc_search_url_text_selected = 2131558408;
 			
-			// aapt resource value: 0x7f0d0056
-			public const int abc_secondary_text_material_dark = 2131558486;
-			
-			// aapt resource value: 0x7f0d0057
-			public const int abc_secondary_text_material_light = 2131558487;
-			
-			// aapt resource value: 0x7f0d0058
-			public const int abc_tint_btn_checkable = 2131558488;
-			
-			// aapt resource value: 0x7f0d0059
-			public const int abc_tint_default = 2131558489;
-			
-			// aapt resource value: 0x7f0d005a
-			public const int abc_tint_edittext = 2131558490;
-			
-			// aapt resource value: 0x7f0d005b
-			public const int abc_tint_seek_thumb = 2131558491;
-			
-			// aapt resource value: 0x7f0d005c
-			public const int abc_tint_spinner = 2131558492;
-			
 			// aapt resource value: 0x7f0d005d
-			public const int abc_tint_switch_thumb = 2131558493;
+			public const int abc_secondary_text_material_dark = 2131558493;
 			
 			// aapt resource value: 0x7f0d005e
-			public const int abc_tint_switch_track = 2131558494;
+			public const int abc_secondary_text_material_light = 2131558494;
+			
+			// aapt resource value: 0x7f0d005f
+			public const int abc_tint_btn_checkable = 2131558495;
+			
+			// aapt resource value: 0x7f0d0060
+			public const int abc_tint_default = 2131558496;
+			
+			// aapt resource value: 0x7f0d0061
+			public const int abc_tint_edittext = 2131558497;
+			
+			// aapt resource value: 0x7f0d0062
+			public const int abc_tint_seek_thumb = 2131558498;
+			
+			// aapt resource value: 0x7f0d0063
+			public const int abc_tint_spinner = 2131558499;
+			
+			// aapt resource value: 0x7f0d0064
+			public const int abc_tint_switch_thumb = 2131558500;
+			
+			// aapt resource value: 0x7f0d0065
+			public const int abc_tint_switch_track = 2131558501;
+			
+			// aapt resource value: 0x7f0d004c
+			public const int accent = 2131558476;
 			
 			// aapt resource value: 0x7f0d0009
 			public const int accent_material_dark = 2131558409;
 			
 			// aapt resource value: 0x7f0d000a
 			public const int accent_material_light = 2131558410;
+			
+			// aapt resource value: 0x7f0d004e
+			public const int apptheme_color = 2131558478;
+			
+			// aapt resource value: 0x7f0d004f
+			public const int apptheme_white = 2131558479;
 			
 			// aapt resource value: 0x7f0d000b
 			public const int background_floating_material_dark = 2131558411;
@@ -1312,8 +1321,8 @@ namespace Tabs.Droid
 			// aapt resource value: 0x7f0d003f
 			public const int design_bottom_navigation_shadow_color = 2131558463;
 			
-			// aapt resource value: 0x7f0d005f
-			public const int design_error = 2131558495;
+			// aapt resource value: 0x7f0d0066
+			public const int design_error = 2131558502;
 			
 			// aapt resource value: 0x7f0d0040
 			public const int design_fab_shadow_end_color = 2131558464;
@@ -1345,8 +1354,8 @@ namespace Tabs.Droid
 			// aapt resource value: 0x7f0d0049
 			public const int design_textinput_error_color_light = 2131558473;
 			
-			// aapt resource value: 0x7f0d0060
-			public const int design_tint_password_toggle = 2131558496;
+			// aapt resource value: 0x7f0d0067
+			public const int design_tint_password_toggle = 2131558503;
 			
 			// aapt resource value: 0x7f0d0017
 			public const int dim_foreground_disabled_material_dark = 2131558423;
@@ -1371,6 +1380,9 @@ namespace Tabs.Droid
 			
 			// aapt resource value: 0x7f0d001e
 			public const int highlighted_text_material_light = 2131558430;
+			
+			// aapt resource value: 0x7f0d0050
+			public const int list_highlight_color = 2131558480;
 			
 			// aapt resource value: 0x7f0d001f
 			public const int material_blue_grey_800 = 2131558431;
@@ -1416,6 +1428,12 @@ namespace Tabs.Droid
 			
 			// aapt resource value: 0x7f0d002c
 			public const int notification_material_background_media_default_color = 2131558444;
+			
+			// aapt resource value: 0x7f0d004a
+			public const int primary = 2131558474;
+			
+			// aapt resource value: 0x7f0d004b
+			public const int primaryDark = 2131558475;
 			
 			// aapt resource value: 0x7f0d002d
 			public const int primary_dark_material_dark = 2131558445;
@@ -1465,17 +1483,20 @@ namespace Tabs.Droid
 			// aapt resource value: 0x7f0d003c
 			public const int switch_thumb_disabled_material_light = 2131558460;
 			
-			// aapt resource value: 0x7f0d0061
-			public const int switch_thumb_material_dark = 2131558497;
+			// aapt resource value: 0x7f0d0068
+			public const int switch_thumb_material_dark = 2131558504;
 			
-			// aapt resource value: 0x7f0d0062
-			public const int switch_thumb_material_light = 2131558498;
+			// aapt resource value: 0x7f0d0069
+			public const int switch_thumb_material_light = 2131558505;
 			
 			// aapt resource value: 0x7f0d003d
 			public const int switch_thumb_normal_material_dark = 2131558461;
 			
 			// aapt resource value: 0x7f0d003e
 			public const int switch_thumb_normal_material_light = 2131558462;
+			
+			// aapt resource value: 0x7f0d004d
+			public const int window_background = 2131558477;
 			
 			static Color()
 			{
@@ -2659,7 +2680,7 @@ namespace Tabs.Droid
 			public const int ic_vol_type_tv_light = 2130837740;
 			
 			// aapt resource value: 0x7f0200ed
-			public const int Icon = 2130837741;
+			public const int icon = 2130837741;
 			
 			// aapt resource value: 0x7f0200ee
 			public const int mr_button_connected_dark = 2130837742;
@@ -2748,17 +2769,23 @@ namespace Tabs.Droid
 			// aapt resource value: 0x7f02010a
 			public const int notification_icon_background = 2130837770;
 			
-			// aapt resource value: 0x7f02010d
-			public const int notification_template_icon_bg = 2130837773;
+			// aapt resource value: 0x7f02010f
+			public const int notification_template_icon_bg = 2130837775;
 			
-			// aapt resource value: 0x7f02010e
-			public const int notification_template_icon_low_bg = 2130837774;
+			// aapt resource value: 0x7f020110
+			public const int notification_template_icon_low_bg = 2130837776;
 			
 			// aapt resource value: 0x7f02010b
 			public const int notification_tile_bg = 2130837771;
 			
 			// aapt resource value: 0x7f02010c
 			public const int notify_panel_notification_icon_bg = 2130837772;
+			
+			// aapt resource value: 0x7f02010d
+			public const int splash = 2130837773;
+			
+			// aapt resource value: 0x7f02010e
+			public const int splash_screen = 2130837774;
 			
 			static Drawable()
 			{
@@ -3840,8 +3867,8 @@ namespace Tabs.Droid
 			// aapt resource value: 0x7f0c0170
 			public const int Animation_Design_BottomSheetDialog = 2131493232;
 			
-			// aapt resource value: 0x7f0c018b
-			public const int AppCompatDialogStyle = 2131493259;
+			// aapt resource value: 0x7f0c018c
+			public const int AppCompatDialogStyle = 2131493260;
 			
 			// aapt resource value: 0x7f0c00b0
 			public const int Base_AlertDialog_AppCompat = 2131493040;
@@ -4320,8 +4347,8 @@ namespace Tabs.Droid
 			// aapt resource value: 0x7f0c0189
 			public const int MainTheme = 2131493257;
 			
-			// aapt resource value: 0x7f0c018a
-			public const int MainTheme_Base = 2131493258;
+			// aapt resource value: 0x7f0c018b
+			public const int MainTheme_Base = 2131493259;
 			
 			// aapt resource value: 0x7f0c002d
 			public const int Platform_AppCompat = 2131492909;
@@ -4724,6 +4751,9 @@ namespace Tabs.Droid
 			
 			// aapt resource value: 0x7f0c0006
 			public const int Theme_MediaRouter_LightControlPanel = 2131492870;
+			
+			// aapt resource value: 0x7f0c018a
+			public const int Theme_Splash = 2131493258;
 			
 			// aapt resource value: 0x7f0c011f
 			public const int ThemeOverlay_AppCompat = 2131493151;

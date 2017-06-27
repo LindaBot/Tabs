@@ -111,3 +111,6 @@ C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\
 C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 C:\Users\David\Documents\Visual Studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\Tabs.Android.csprojResolveAssemblyReference.cache
+C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\res\drawable\splash_screen.xml
+C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\res\drawable\splash.png
+C:\Users\David\documents\visual studio 2017\Projects\Tabs\Tabs\Tabs.Android\obj\Debug\res\values\colors.xml

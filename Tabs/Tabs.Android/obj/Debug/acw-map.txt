@@ -6,6 +6,10 @@ Tabs.Droid.MainApplication, Tabs.Android;md52a76a9f9044da7520be54b40fdc0dd50.Mai
 Tabs.Droid.MainApplication, Tabs.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52a76a9f9044da7520be54b40fdc0dd50.MainApplication
 Tabs.Droid.MainApplication;md52a76a9f9044da7520be54b40fdc0dd50.MainApplication
 tabs.droid.MainApplication;md52a76a9f9044da7520be54b40fdc0dd50.MainApplication
+Tabs.Droid.SplashActivity, Tabs.Android;md52a76a9f9044da7520be54b40fdc0dd50.SplashActivity
+Tabs.Droid.SplashActivity, Tabs.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52a76a9f9044da7520be54b40fdc0dd50.SplashActivity
+Tabs.Droid.SplashActivity;md52a76a9f9044da7520be54b40fdc0dd50.SplashActivity
+tabs.droid.SplashActivity;md52a76a9f9044da7520be54b40fdc0dd50.SplashActivity
 Android.Support.CustomTabs.Chromium.SharedUtilities.CustomTabActivityHelper, Microsoft.Azure.Mobile.Client;md56bce3e956227dd5f11fd9e6712c39257.CustomTabActivityHelper
 Android.Support.CustomTabs.Chromium.SharedUtilities.CustomTabActivityHelper, Microsoft.Azure.Mobile.Client, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35;md56bce3e956227dd5f11fd9e6712c39257.CustomTabActivityHelper
 Android.Support.CustomTabs.Chromium.SharedUtilities.CustomTabActivityHelper;md56bce3e956227dd5f11fd9e6712c39257.CustomTabActivityHelper
