@@ -15,12 +15,13 @@ namespace Tabs
 {
     public partial class CustomVision : ContentPage
     {
-
+        TodoItemManager manager;
         string responseString = "";
 
         public CustomVision()
         {
             InitializeComponent();
+            manager = TodoItemManager.DefaultManager;
         }
 
         private async void LoadCamera(object sender, EventArgs e)
@@ -76,6 +77,16 @@ namespace Tabs
             await MakePredictionRequest(file);
         }
 
+        public void DataBinding(List<String> message)
+        {
+            List<TodoItem> sentenceList = new List<TodoItem>();
+            foreach (var sentence in message)
+            {
+                sentenceList.Add(new TodoItem { Name = sentence });
+            }
+            uploadList.ItemsSource = sentenceList;
+        }
+
         /*
         public void makeButton(List<String> message)
         {
@@ -110,16 +121,17 @@ namespace Tabs
             return attrib1Value;
         }
 
-
+ 
 
         private void GetInfo(object sender, EventArgs e)
         {
-            TagLabel.Text = responseString;
+            TagLabel.Text = JToken.Parse(responseString).ToString(Newtonsoft.Json.Formatting.Indented);
             return;
         }
 
         public async Task MakePredictionRequest(MediaFile file)
         {
+            Hint.Text = "Please Wait";
             // An unhandled exception occured. occurred
             var client = new HttpClient();
 
@@ -139,8 +151,7 @@ namespace Tabs
             byte[] byteData = GetImageAsByteArray(file);
 
             var content = new ByteArrayContent(byteData);
-
-            TagLabel.Text = "";
+            
             content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
 
             response = await client.PostAsync(uri, content);
@@ -163,17 +174,14 @@ namespace Tabs
                     {
                         message.Add(section["text"].ToString());
                     }
-                    
-                    foreach (var sentense in message)
-                    {
-                        TagLabel.Text += sentense + "\n";
-                    }
 
-                    // makeButton(message);
+                    Hint.Text = "Please select a message to upload";
+
+                    DataBinding(message);
 
                     if (message.Count == 0)
                     {
-                        TagLabel.Text = "Nothing found";
+                        Hint.Text = "Nothing found";
                     }
                 }
                 catch (Exception e)
@@ -186,7 +194,44 @@ namespace Tabs
             file.Dispose();
         }
 
-        
+        // Event handlers
+        public async void OnSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var todo = e.SelectedItem as TodoItem;
+            if (Device.OS != TargetPlatform.iOS && todo != null)
+            {
+                // Not iOS - the swipe-to-delete is discoverable there
+                if (Device.OS == TargetPlatform.Android)
+                {
+                    await DisplayAlert(todo.Name, "Press-and-hold to upload \n\"" + todo.Name + "\"", "Got it!");
+                }
+                else
+                {
+                    // Windows, not all platforms support the Context Actions yet
+                    if (await DisplayAlert("Upload?", "Do you wish to upload \n" + todo.Name + "?", "upload", "Cancel"))
+                    {
+                        await AddItem(todo);
+                    }
+                }
+            }
+
+            // prevents background getting highlighted
+            uploadList.SelectedItem = null;
+        }
+
+        public async void OnAdd(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            var todo = mi.CommandParameter as TodoItem;
+            await AddItem(todo);
+        }
+
+        async Task AddItem(TodoItem item)
+        {
+            await manager.SaveTaskAsync(item);
+        }
+
+
 
     }
 }

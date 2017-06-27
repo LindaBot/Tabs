@@ -4,7 +4,7 @@
         <StackLayout Margin="20" Orientation="Vertical">
             <Button Text="Take Photo and Analyze" Clicked="LoadCamera" />
             <Button Text="Select image from gallery" Clicked="LoadImage"/>
-            <Button Text="Debug" Clicked="GetInfo"/>
+            <Button Text="Show JSON" Clicked="GetInfo"/>
 
 
             <Image x:Name="image" Aspect="AspectFit"/>
@@ -12,12 +12,27 @@
             <StackLayout Orientation="Horizontal">
                 <Label x:Name="TagLabel">
                 </Label>
+                <Label x:Name="Hint">
+                </Label>
             </StackLayout>
 
-            <StackLayout Orientation="Vertical" x:Name="buttons">
-                
-                
-            </StackLayout>
+            <ListView x:Name="uploadList"
+                      Grid.Row="1" ItemSelected="OnSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Add" CommandParameter="{Binding .}" Clicked="OnAdd" />
+                            </ViewCell.ContextActions>
+                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal" Padding="15,5,0,0">
+                                <StackLayout Padding="5,0,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                                    <Label Text="{Binding Name}"  />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             
         
     </StackLayout>
